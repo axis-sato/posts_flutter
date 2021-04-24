@@ -1,16 +1,36 @@
 # posts_flutter
 
-A new Flutter project.
+---
+
+FlutterのBlue Print
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+### Git Hooksの設定
 
-A few resources to get you started if this is your first Flutter project:
+Git Hooksを設定することにより、以下実行する。
+- コミット時: `formatter`
+- プッシュ時: `linter`, `test`
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+```sh
+chmod -R +x githooks/
+cp -fr githooks/ .git/hooks
+```
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Environment
+
+### Formatter, Linter
+
+- Formatter: [Effective Dart](https://dart.dev/guides/language/effective-dart)
+- Linter: [lint](https://pub.dev/packages/lint)
+
+### Git Hooks
+
+Git Hooksで以下が実行される。
+- コミット時: `formatter`
+- プッシュ時: `linter`, `test`
+
+### GitHub Actions
+
+GitHub Actionsで以下が実行される。
+- プルリク作成、プルリク更新、mainブランチにブッシュ時: `linter`, `test`

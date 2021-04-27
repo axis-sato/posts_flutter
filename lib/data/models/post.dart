@@ -1,7 +1,12 @@
-class Post {
-  int id;
-  String title;
-  String body;
+import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:flutter/foundation.dart';
 
-  Post({required this.id, required this.title, required this.body});
+part "post.freezed.dart";
+part "post.g.dart";
+
+@freezed
+class Post with _$Post {
+  factory Post({required int id, required String title, required String body}) =
+      _Post;
+  factory Post.fromJson(Map<String, dynamic> json) => _$PostFromJson(json);
 }

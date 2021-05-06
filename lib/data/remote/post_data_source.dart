@@ -9,6 +9,6 @@ class PostDataSource {
   Future<Posts> getPosts() async {
     // TODO: エラーハンドリング
     final response = await _dio.get<List<dynamic>>("/posts?userId=1");
-    return Posts.fromJson({"posts": response.data!});
+    return Posts.fromJsonWithoutEnvelop(response.data!);
   }
 }

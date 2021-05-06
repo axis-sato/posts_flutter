@@ -20,9 +20,9 @@ Posts _$PostsFromJson(Map<String, dynamic> json) {
 class _$PostsTearOff {
   const _$PostsTearOff();
 
-  _Posts call({required List<Post> posts}) {
+  _Posts call({required List<Post> items}) {
     return _Posts(
-      posts: posts,
+      items: items,
     );
   }
 
@@ -36,7 +36,7 @@ const $Posts = _$PostsTearOff();
 
 /// @nodoc
 mixin _$Posts {
-  List<Post> get posts => throw _privateConstructorUsedError;
+  List<Post> get items => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -47,7 +47,7 @@ mixin _$Posts {
 abstract class $PostsCopyWith<$Res> {
   factory $PostsCopyWith(Posts value, $Res Function(Posts) then) =
       _$PostsCopyWithImpl<$Res>;
-  $Res call({List<Post> posts});
+  $Res call({List<Post> items});
 }
 
 /// @nodoc
@@ -60,12 +60,12 @@ class _$PostsCopyWithImpl<$Res> implements $PostsCopyWith<$Res> {
 
   @override
   $Res call({
-    Object? posts = freezed,
+    Object? items = freezed,
   }) {
     return _then(_value.copyWith(
-      posts: posts == freezed
-          ? _value.posts
-          : posts // ignore: cast_nullable_to_non_nullable
+      items: items == freezed
+          ? _value.items
+          : items // ignore: cast_nullable_to_non_nullable
               as List<Post>,
     ));
   }
@@ -76,7 +76,7 @@ abstract class _$PostsCopyWith<$Res> implements $PostsCopyWith<$Res> {
   factory _$PostsCopyWith(_Posts value, $Res Function(_Posts) then) =
       __$PostsCopyWithImpl<$Res>;
   @override
-  $Res call({List<Post> posts});
+  $Res call({List<Post> items});
 }
 
 /// @nodoc
@@ -90,12 +90,12 @@ class __$PostsCopyWithImpl<$Res> extends _$PostsCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? posts = freezed,
+    Object? items = freezed,
   }) {
     return _then(_Posts(
-      posts: posts == freezed
-          ? _value.posts
-          : posts // ignore: cast_nullable_to_non_nullable
+      items: items == freezed
+          ? _value.items
+          : items // ignore: cast_nullable_to_non_nullable
               as List<Post>,
     ));
   }
@@ -104,17 +104,17 @@ class __$PostsCopyWithImpl<$Res> extends _$PostsCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_Posts with DiagnosticableTreeMixin implements _Posts {
-  _$_Posts({required this.posts});
+  const _$_Posts({required this.items});
 
   factory _$_Posts.fromJson(Map<String, dynamic> json) =>
       _$_$_PostsFromJson(json);
 
   @override
-  final List<Post> posts;
+  final List<Post> items;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'Posts(posts: $posts)';
+    return 'Posts(items: $items)';
   }
 
   @override
@@ -122,20 +122,20 @@ class _$_Posts with DiagnosticableTreeMixin implements _Posts {
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'Posts'))
-      ..add(DiagnosticsProperty('posts', posts));
+      ..add(DiagnosticsProperty('items', items));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _Posts &&
-            (identical(other.posts, posts) ||
-                const DeepCollectionEquality().equals(other.posts, posts)));
+            (identical(other.items, items) ||
+                const DeepCollectionEquality().equals(other.items, items)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(posts);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(items);
 
   @JsonKey(ignore: true)
   @override
@@ -149,12 +149,12 @@ class _$_Posts with DiagnosticableTreeMixin implements _Posts {
 }
 
 abstract class _Posts implements Posts {
-  factory _Posts({required List<Post> posts}) = _$_Posts;
+  const factory _Posts({required List<Post> items}) = _$_Posts;
 
   factory _Posts.fromJson(Map<String, dynamic> json) = _$_Posts.fromJson;
 
   @override
-  List<Post> get posts => throw _privateConstructorUsedError;
+  List<Post> get items => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$PostsCopyWith<_Posts> get copyWith => throw _privateConstructorUsedError;

@@ -7,6 +7,8 @@ part "posts.g.dart";
 
 @freezed
 class Posts with _$Posts {
-  factory Posts({required List<Post> posts}) = _Posts;
+  const factory Posts({required List<Post> items}) = _Posts;
   factory Posts.fromJson(Map<String, dynamic> json) => _$PostsFromJson(json);
+  factory Posts.fromJsonWithoutEnvelop(List<dynamic> json) =>
+      Posts.fromJson({"items": json});
 }

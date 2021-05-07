@@ -1,7 +1,14 @@
-class Comment {
-  int id;
-  String name;
-  String body;
+import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:flutter/foundation.dart';
 
-  Comment({required this.id, required this.name, required this.body});
+part 'comment.freezed.dart';
+part 'comment.g.dart';
+
+@freezed
+class Comment with _$Comment {
+  factory Comment(
+      {required int id, required String name, required String body}) = _Comment;
+
+  factory Comment.fromJson(Map<String, dynamic> json) =>
+      _$CommentFromJson(json);
 }

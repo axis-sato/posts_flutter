@@ -30,7 +30,6 @@ const $PostsState = _$PostsStateTearOff();
 
 /// @nodoc
 mixin _$PostsState {
-// @Default(Posts(items: [])) Posts posts,
   Posts get posts => throw _privateConstructorUsedError;
   bool get isLoading => throw _privateConstructorUsedError;
 
@@ -130,7 +129,7 @@ class _$_PostsState extends _PostsState with DiagnosticableTreeMixin {
       : super._();
 
   @JsonKey(defaultValue: const Posts(items: const []))
-  @override // @Default(Posts(items: [])) Posts posts,
+  @override
   final Posts posts;
   @JsonKey(defaultValue: true)
   @override
@@ -177,7 +176,7 @@ abstract class _PostsState extends PostsState {
   factory _PostsState({Posts posts, bool isLoading}) = _$_PostsState;
   _PostsState._() : super._();
 
-  @override // @Default(Posts(items: [])) Posts posts,
+  @override
   Posts get posts => throw _privateConstructorUsedError;
   @override
   bool get isLoading => throw _privateConstructorUsedError;

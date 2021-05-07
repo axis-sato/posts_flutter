@@ -1,22 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:posts_flutter/controllers/post_detail_controller/post_detail_controller.dart';
 import 'package:posts_flutter/data/models/comment.dart';
-import 'package:posts_flutter/data/models/post.dart';
 
 class PostPage extends StatelessWidget {
-  final Post _post;
+  final int _postID;
 
+// TODO: コメントをAPI経由で取得する
   final _comments = [
     Comment(id: 1, name: "foo", body: "ふー"),
     Comment(id: 2, name: "bar", body: "ばー"),
     Comment(id: 3, name: "hoge", body: "ほげ"),
   ];
 
-  PostPage({Key? key, required Post post})
-      : _post = post,
+  PostPage({Key? key, required int postID})
+      : _postID = postID,
         super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final postDetailController =
+        context.read(postDetailProvider(_postID).notifier);
+    final _post = postDetailController.item;
+
     return Scaffold(
       appBar: AppBar(
         title: Text("Post ${_post.id}"),

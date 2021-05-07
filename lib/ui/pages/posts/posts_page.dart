@@ -28,7 +28,7 @@ class PostsPage extends StatelessWidget {
                 onTap: () => Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => PostPage(post: post),
+                    builder: (context) => PostPage(postID: post.id),
                   ),
                 ),
               );

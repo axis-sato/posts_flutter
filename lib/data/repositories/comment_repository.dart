@@ -1,5 +1,4 @@
 import 'package:posts_flutter/data/models/comment.dart';
-import 'package:posts_flutter/data/models/posts.dart';
 import 'package:posts_flutter/data/remote/comment_data_source.dart';
 
 class CommentRepository {

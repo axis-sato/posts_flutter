@@ -3,10 +3,9 @@ import 'package:posts_flutter/controllers/comments_controller/comments_state.dar
 import 'package:posts_flutter/data/providers/comment_repository_provider.dart';
 import 'package:posts_flutter/data/repositories/comment_repository.dart';
 
-final commentsProvider =
-    StateNotifierProvider.family<CommentsController, CommentsState, int>(
-        (ref, postID) =>
-            CommentsController(ref.read(commentRepositoryProvider), postID));
+final commentsProvider = StateNotifierProvider.autoDispose
+    .family<CommentsController, CommentsState, int>((ref, postID) =>
+        CommentsController(ref.read(commentRepositoryProvider), postID));
 
 class CommentsController extends StateNotifier<CommentsState> {
   final CommentRepository _commentRepository;

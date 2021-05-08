@@ -1,17 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:posts_flutter/controllers/comments_controller/comments_controller.dart';
-import 'package:posts_flutter/data/models/comment.dart';
 import 'package:posts_flutter/ui/widgets/loading.dart';
 
 class Comments extends StatelessWidget {
-// TODO: コメントをAPI経由で取得する
-  // final _comments = [
-  //   Comment(id: 1, name: "foo", body: "ふー"),
-  //   Comment(id: 2, name: "bar", body: "ばー"),
-  //   Comment(id: 3, name: "hoge", body: "ほげ"),
-  // ];
-
   final int _postID;
 
   const Comments({required int postID, Key? key})

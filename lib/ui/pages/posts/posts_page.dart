@@ -15,10 +15,20 @@ class PostsPage extends StatelessWidget {
       ),
       body: Consumer(
         builder: (context, watch, child) {
-          final _isLoading = watch(postsProvider).isLoading;
-          if (_isLoading) return const Loading();
+          final postsState = watch(postsProvider);
+          final postsController = context.read(postsProvider.notifier);
 
-          final _posts = watch(postsProvider).posts.items;
+          if (postsState.isLoading) return const Loading();
+
+          if (postsState.error != null) {
+            return Center(
+              child: TextButton(
+                  onPressed: () => postsController.fetchPosts(),
+                  child: const Text("リトライ")),
+            );
+          }
+
+          final _posts = postsState.posts.items;
 
           return ListView.separated(
             itemBuilder: (BuildContext context, int index) {

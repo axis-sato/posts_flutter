@@ -7,7 +7,6 @@ class PostDataSource {
   PostDataSource({required Dio dio}) : _dio = dio;
 
   Future<Posts> getPosts() async {
-    // TODO: エラーハンドリング
     final response = await _dio.get<List<dynamic>>("/posts?userId=1");
     return Posts.fromJsonWithoutEnvelop(response.data!);
   }

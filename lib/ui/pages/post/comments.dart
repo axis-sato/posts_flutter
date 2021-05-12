@@ -15,10 +15,21 @@ class Comments extends StatelessWidget {
     return Consumer(
       builder: (context, watch, child) {
         final _commentsState = watch(commentsProvider(_postID));
+        final _commentsController =
+            context.read(commentsProvider(_postID).notifier);
 
         if (_commentsState.isLoading) {
           return const Loading();
         }
+
+        if (_commentsState.error != null) {
+          return Center(
+            child: TextButton(
+                onPressed: () => _commentsController.fetchComments(),
+                child: const Text("リトライ")),
+          );
+        }
+
         final _comments = _commentsState.comments;
 
         return Column(

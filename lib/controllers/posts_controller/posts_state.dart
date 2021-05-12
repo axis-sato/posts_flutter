@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:posts_flutter/data/exceptions/get_posts_exception.dart';
 import 'package:posts_flutter/data/models/post.dart';
 import 'package:posts_flutter/data/models/posts.dart';
 
@@ -10,6 +11,7 @@ class PostsState with _$PostsState {
   factory PostsState({
     @Default(Posts(items: [])) Posts posts,
     @Default(true) bool isLoading,
+    @Default(null) GetPostsException? error,
   }) = _PostsState;
 
   PostsState._();

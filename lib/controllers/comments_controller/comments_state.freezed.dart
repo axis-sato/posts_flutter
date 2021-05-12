@@ -17,10 +17,13 @@ class _$CommentsStateTearOff {
   const _$CommentsStateTearOff();
 
   _CommentsState call(
-      {List<Comment> comments = const <Comment>[], bool isLoading = true}) {
+      {List<Comment> comments = const <Comment>[],
+      bool isLoading = true,
+      GetCommentsException? error = null}) {
     return _CommentsState(
       comments: comments,
       isLoading: isLoading,
+      error: error,
     );
   }
 }
@@ -32,6 +35,7 @@ const $CommentsState = _$CommentsStateTearOff();
 mixin _$CommentsState {
   List<Comment> get comments => throw _privateConstructorUsedError;
   bool get isLoading => throw _privateConstructorUsedError;
+  GetCommentsException? get error => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $CommentsStateCopyWith<CommentsState> get copyWith =>
@@ -43,7 +47,10 @@ abstract class $CommentsStateCopyWith<$Res> {
   factory $CommentsStateCopyWith(
           CommentsState value, $Res Function(CommentsState) then) =
       _$CommentsStateCopyWithImpl<$Res>;
-  $Res call({List<Comment> comments, bool isLoading});
+  $Res call(
+      {List<Comment> comments, bool isLoading, GetCommentsException? error});
+
+  $GetCommentsExceptionCopyWith<$Res>? get error;
 }
 
 /// @nodoc
@@ -59,6 +66,7 @@ class _$CommentsStateCopyWithImpl<$Res>
   $Res call({
     Object? comments = freezed,
     Object? isLoading = freezed,
+    Object? error = freezed,
   }) {
     return _then(_value.copyWith(
       comments: comments == freezed
@@ -69,7 +77,22 @@ class _$CommentsStateCopyWithImpl<$Res>
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
+      error: error == freezed
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as GetCommentsException?,
     ));
+  }
+
+  @override
+  $GetCommentsExceptionCopyWith<$Res>? get error {
+    if (_value.error == null) {
+      return null;
+    }
+
+    return $GetCommentsExceptionCopyWith<$Res>(_value.error!, (value) {
+      return _then(_value.copyWith(error: value));
+    });
   }
 }
 
@@ -80,7 +103,11 @@ abstract class _$CommentsStateCopyWith<$Res>
           _CommentsState value, $Res Function(_CommentsState) then) =
       __$CommentsStateCopyWithImpl<$Res>;
   @override
-  $Res call({List<Comment> comments, bool isLoading});
+  $Res call(
+      {List<Comment> comments, bool isLoading, GetCommentsException? error});
+
+  @override
+  $GetCommentsExceptionCopyWith<$Res>? get error;
 }
 
 /// @nodoc
@@ -98,6 +125,7 @@ class __$CommentsStateCopyWithImpl<$Res>
   $Res call({
     Object? comments = freezed,
     Object? isLoading = freezed,
+    Object? error = freezed,
   }) {
     return _then(_CommentsState(
       comments: comments == freezed
@@ -108,6 +136,10 @@ class __$CommentsStateCopyWithImpl<$Res>
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
+      error: error == freezed
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as GetCommentsException?,
     ));
   }
 }
@@ -115,7 +147,10 @@ class __$CommentsStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_CommentsState with DiagnosticableTreeMixin implements _CommentsState {
-  _$_CommentsState({this.comments = const <Comment>[], this.isLoading = true});
+  _$_CommentsState(
+      {this.comments = const <Comment>[],
+      this.isLoading = true,
+      this.error = null});
 
   @JsonKey(defaultValue: const <Comment>[])
   @override
@@ -123,10 +158,13 @@ class _$_CommentsState with DiagnosticableTreeMixin implements _CommentsState {
   @JsonKey(defaultValue: true)
   @override
   final bool isLoading;
+  @JsonKey(defaultValue: null)
+  @override
+  final GetCommentsException? error;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'CommentsState(comments: $comments, isLoading: $isLoading)';
+    return 'CommentsState(comments: $comments, isLoading: $isLoading, error: $error)';
   }
 
   @override
@@ -135,7 +173,8 @@ class _$_CommentsState with DiagnosticableTreeMixin implements _CommentsState {
     properties
       ..add(DiagnosticsProperty('type', 'CommentsState'))
       ..add(DiagnosticsProperty('comments', comments))
-      ..add(DiagnosticsProperty('isLoading', isLoading));
+      ..add(DiagnosticsProperty('isLoading', isLoading))
+      ..add(DiagnosticsProperty('error', error));
   }
 
   @override
@@ -147,14 +186,17 @@ class _$_CommentsState with DiagnosticableTreeMixin implements _CommentsState {
                     .equals(other.comments, comments)) &&
             (identical(other.isLoading, isLoading) ||
                 const DeepCollectionEquality()
-                    .equals(other.isLoading, isLoading)));
+                    .equals(other.isLoading, isLoading)) &&
+            (identical(other.error, error) ||
+                const DeepCollectionEquality().equals(other.error, error)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(comments) ^
-      const DeepCollectionEquality().hash(isLoading);
+      const DeepCollectionEquality().hash(isLoading) ^
+      const DeepCollectionEquality().hash(error);
 
   @JsonKey(ignore: true)
   @override
@@ -163,13 +205,17 @@ class _$_CommentsState with DiagnosticableTreeMixin implements _CommentsState {
 }
 
 abstract class _CommentsState implements CommentsState {
-  factory _CommentsState({List<Comment> comments, bool isLoading}) =
-      _$_CommentsState;
+  factory _CommentsState(
+      {List<Comment> comments,
+      bool isLoading,
+      GetCommentsException? error}) = _$_CommentsState;
 
   @override
   List<Comment> get comments => throw _privateConstructorUsedError;
   @override
   bool get isLoading => throw _privateConstructorUsedError;
+  @override
+  GetCommentsException? get error => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$CommentsStateCopyWith<_CommentsState> get copyWith =>

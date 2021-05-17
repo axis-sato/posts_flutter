@@ -29,6 +29,7 @@ dependencies:
 
 dev_dependencies:
   build_runner: ^2.0.1
+  flutter_flavorizr: ^2.0.0
   flutter_test:
     sdk: flutter
   freezed: ^0.14.1
@@ -78,3 +79,40 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+
+flavorizr:
+  app:
+    android:
+      flavorDimensions: "flavor-type"
+    ios:
+  
+  flavors:
+    local:
+      app:
+        name: "Posts Flutter (local)"
+  
+      android:
+        applicationId: "com.example.posts_flutter.local"
+  
+      ios:
+        bundleId: "com.example.postsFlutter.local"
+  
+    dev:
+      app:
+        name: "Posts Flutter (dev)"
+  
+      android:
+        applicationId: "com.example.posts_flutter.dev"
+  
+      ios:
+        bundleId: "com.example.postsFlutter.dev"
+  
+    prod:
+      app:
+        name: "Posts Flutter"
+  
+      android:
+        applicationId: "com.example.posts_flutter"
+  
+      ios:
+        bundleId: "com.example.postsFlutter"

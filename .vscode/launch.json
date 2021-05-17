@@ -1,0 +1,25 @@
+{
+    "configurations": [
+        {
+            "name": "posts_flutter (local)",
+            "program": "lib/main_local.dart",
+            "request": "launch",
+            "type": "dart",
+            "args": ["--flavor", "local"]
+        },
+        {
+            "name": "posts_flutter (dev)",
+            "program": "lib/main_dev.dart",
+            "request": "launch",
+            "type": "dart",
+            "args": ["--flavor", "dev"]
+        },
+        {
+            "name": "posts_flutter (prod)",
+            "program": "lib/main_prod.dart",
+            "request": "launch",
+            "type": "dart",
+            "args": ["--flavor", "prod"]
+        },
+    ]
+}

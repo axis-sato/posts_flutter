@@ -1,20 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:posts_flutter/ui/pages/page_container.dart';
 import 'package:posts_flutter/ui/pages/posts/posts_page.dart';
-
-void main() {
-  runApp(ProviderScope(child: App()));
-}
+import 'package:posts_flutter/utils/env.dart';
 
 class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter TODO',
+      title: E.instance.title,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: PostsPage(),
+      home: PageContainer(
+        child: PostsPage(),
+      ),
     );
   }
 }

@@ -36,3 +36,19 @@ Git Hooksで以下が実行される。
 
 GitHub Actionsで以下が実行される。
 - プルリク作成、プルリク更新、mainブランチにブッシュ時: `linter`, `test`
+
+## State Management
+
+- [flutter_riverpod](https://pub.dev/packages/flutter_riverpod)
+- [state_notifier](https://pub.dev/packages/state_notifier)
+- [freezed](https://pub.dev/packages/freezed)
+
+## API
+
+- [dio](https://pub.dev/packages/dio)
+
+## Flavor
+
+- [flutter_flavorizr](https://pub.dev/packages/flutter_flavorizr)
+
+see: https://zenn.dev/kmd_htsh0226/articles/c229fe4b8fb321

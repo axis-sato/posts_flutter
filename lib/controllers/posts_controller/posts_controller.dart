@@ -10,7 +10,8 @@ final postsProvider = StateNotifierProvider<PostsController, PostsState>(
 
 class PostsController extends StateNotifier<PostsState> {
   final PostRepository _postRepository;
-  PostsController(this._postRepository) : super(PostsState()) {
+  PostsController(this._postRepository, {PostsState? state})
+      : super(state ?? PostsState()) {
     () async {
       fetchPosts();
     }();

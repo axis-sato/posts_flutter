@@ -17,7 +17,7 @@ class _$PostsStateTearOff {
   const _$PostsStateTearOff();
 
   _PostsState call(
-      {Posts posts = const Posts(items: const []),
+      {Posts posts = const Posts(items: []),
       bool isLoading = true,
       GetPostsException? error = null}) {
     return _PostsState(
@@ -153,12 +153,12 @@ class __$PostsStateCopyWithImpl<$Res> extends _$PostsStateCopyWithImpl<$Res>
 
 class _$_PostsState extends _PostsState with DiagnosticableTreeMixin {
   _$_PostsState(
-      {this.posts = const Posts(items: const []),
+      {this.posts = const Posts(items: []),
       this.isLoading = true,
       this.error = null})
       : super._();
 
-  @JsonKey(defaultValue: const Posts(items: const []))
+  @JsonKey(defaultValue: const Posts(items: []))
   @override
   final Posts posts;
   @JsonKey(defaultValue: true)
